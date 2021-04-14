@@ -1,0 +1,1 @@
+Dir to deploye static and static collection

@@ -1,0 +1,15 @@
+server {
+listen 80;
+server_name server_ip;
+
+location = /favicon.ico { access_log off; log_not_found off; }
+location /static/ {
+root /home/PATH/dist;
+}
+
+location / {
+include proxy_params;
+proxy_pass http://unix:/home/PATH/backend/backend.sock;
+include snippets/phpmyadmin.conf;
+}
+}
